@@ -1,0 +1,5 @@
+What can block rendering?
+
+The premise of rendering is to generate a render tree, which means HTML and CSS will inevitably block rendering. The quicker you want the rendering to occur, the more you should aim to reduce the size of the files needed for the initial render, and flatten the structure and optimize selectors. When the browser encounters a script tag, it pauses the construction of the DOM and resumes only after the script has finished executing. This implies that if you aim for faster rendering of the initial view, you should avoid loading JS files upfront, which is why it is recommended to place script tags at the bottom of the body tag.
+
+Currently, it's not mandatory to place script tags at the bottom because you can use the defer or async attributes with script tags. Adding the defer attribute to a script tag indicates that the JS file will be downloaded in parallel but executed in sequence after the HTML parsing is complete, allowing you to place the script tag in any location. For JS files that don't depend on anything, the async attribute can be added, indicating that the downloading and parsing of the JS file will not block rendering.
