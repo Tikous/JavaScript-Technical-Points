@@ -1,0 +1,5 @@
+● Processes can be considered independent applications, threads cannot
+● Resources: A process is the smallest unit for CPU resource allocation and can run independently. A thread, on the other hand, is the smallest unit of CPU scheduling and exists within a process, allowing multiple threads per process
+● Communication: Threads can directly share resources within the same process, whereas processes require inter-process communication for interaction.
+● Scheduling: Process switching is more expensive than thread switching. Thread is the basic unit of CPU scheduling, thread switching does not cause process switching, but when a thread in a process switches to a thread in another process, it will cause process switching.
+● System Overhead: Creating or terminating a process involves significant system resources allocation, like memory and I/O, making it more costly than creating or terminating a thread. Process switching requires saving and restoring the CPU state and other process-specific information, which is more resource-intensive compared to thread switching, which primarily involves saving and restoring a limited set of registers.
